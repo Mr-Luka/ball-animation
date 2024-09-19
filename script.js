@@ -3,7 +3,7 @@ const play = document.querySelector("#play");
 const pause = document.querySelector("#pause");
 const reverse = document.querySelector("#reverse");
 const speedUp = document.querySelector("#speed-up");
-const speedDown = document.querySelector("#speed-down");
+const slowDown = document.querySelector("#slow-down");
 
 const rollAnimation = [{
     transform: 'rotate(0) translate3D(-50%, -50%, 0)',
@@ -32,3 +32,7 @@ play.addEventListener('click', ()=> {
     roll.play()
 });
 reverse.addEventListener("click", ()=> roll.reverse());
+speedUp.addEventListener('click', ()=> (roll.playbackRate = roll.playbackRate * 2));
+slowDown.addEventListener(
+    'click', 
+    ()=> (roll.playbackRate = roll.playbackRate * 0.5));
